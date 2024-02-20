@@ -15,7 +15,7 @@ const anotherId = Symbol('123')
 
 const bigNumber = 11111111111111111111n
 
-console.log(id === anotherId)
+// console.log(id === anotherId)
 
 
 // Referance data types 
@@ -34,4 +34,27 @@ const myFunction = function (){
 
 }
 
-console.log(typeof bigNumber)
+// console.log(typeof bigNumber)
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//  memory types  : -  Stack , Heap
+
+let myYoutubeName = "HiteshChaudharydotcom"
+
+let anotherName = myYoutubeName
+
+console.log(anotherName)
+
+let userOne = {
+    Email: "mohit@gmail.com",
+    upi: "user@ybl"
+}
+
+userTwo = userOne
+userTwo.Email = "Mohitkumar@gmail.com"
+
+console.log(userOne.Email)
+console.log(userTwo.Email)
+

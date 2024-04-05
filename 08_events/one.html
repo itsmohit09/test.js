@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/6155010/pexels-photo-6155010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt=""></li>
+            <li><img width="200px" id="deer"
+                    src="https://images.pexels.com/photos/2210192/pexels-photo-2210192.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="japan"
+                    src="https://images.pexels.com/photos/19820263/pexels-photo-19820263/free-photo-of-a-row-of-buildings-in-the-water-with-boats.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="river"
+                    src="https://images.pexels.com/photos/2161499/pexels-photo-2161499.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt=""></li>
+            <li><img width="200px" id="prayer"
+                    src="https://images.pexels.com/photos/1309052/pexels-photo-1309052.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt=""></li>
+            <li><a id="google" style="color : red;" href="https://www.google.com/"></a>Google</li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('deer').onclick = function(){
+    //     alert('deer clicked')
+    // }
+    // attachEvent()
+    // jQuery - on
+
+    // type, timestamp, defaultPrevent
+    // target , toElement, srcElement, currentTarget
+    // clientX, clientY, screenx,screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // ************** Event propagation = inside to outside ******************** bubbling : from bottom to top ************
+    // ************** capturing : from top to bottom ****************
+
+    // document.getElementById('images').addEventListener('click', function (e) {
+    //     console.log('clicked inside the ul')
+    // }, false)
+
+    // document.getElementById('deer').addEventListener('click', function (e) {
+    //     console.log(' deer clicked ')
+    //     e.stopPropagation()
+    // }, false)
+
+    // document.getElementById('google').addEventListener('click', function (e){
+    // e.preventDefault()
+    // e.stopPropagation()
+    // console.log("google clicked")
+    // })
+
+    document.querySelector('#images').addEventListener('click', function (e) {
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+
+    }, false)
+
+    // removeIt.parentNode.removeChild(removeIt);
+</script>
+
+</html>
